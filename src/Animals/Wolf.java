@@ -1,18 +1,18 @@
 package Animals;
 
-import enums.DigestionType;
+import Enums.DigestionType;
+import Enums.RespirationType;
 
 public class Wolf extends Animal{
 
-    public Wolf(String name, String scientificName, String admissionDate, String family) {
-        super(name, scientificName, admissionDate, family);
-    }
-
-    @Override
-    public void digest(DigestionType digestionType) {
-        String typeOfDigest = "The wolf are ";
-        typeOfDigest += digestionType.toString();
-
-        System.out.println(typeOfDigest);
+    public Wolf(
+            String name,
+            String scientificName,
+            String admissionDate,
+            String family,
+            DigestionType digestionType,
+            RespirationType respirationType
+    ){
+        super(name, scientificName, admissionDate, family, digestionType, respirationType);
     }
 }

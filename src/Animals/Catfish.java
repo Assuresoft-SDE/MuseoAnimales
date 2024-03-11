@@ -1,19 +1,18 @@
 package Animals;
 
-import enums.DigestionType;
+import Enums.DigestionType;
+import Enums.RespirationType;
 
 public class Catfish extends Animal{
 
-    public Catfish(String name, String scientificName, String admissionDate, String family) {
-        super(name, scientificName, admissionDate, family);
+    public Catfish(
+            String name,
+            String scientificName,
+            String admissionDate,
+            String family,
+            DigestionType digestionType,
+            RespirationType respirationType
+    ){
+        super(name, scientificName, admissionDate, family, digestionType, respirationType);
     }
-
-    @Override
-    public void digest(DigestionType digestionType) {
-        String typeOfDigest = "The catfish are ";
-        typeOfDigest += digestionType.toString();
-
-        System.out.println(typeOfDigest);
-    }
-
 }
