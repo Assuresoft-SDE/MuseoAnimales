@@ -1,5 +1,7 @@
-package Animals;
-
+import Animals.Bat;
+import Animals.Catfish;
+import Animals.Dolphin;
+import Animals.Whale;
 import enums.DigestionType;
 import enums.RespirationType;
 
