@@ -1,9 +1,10 @@
 package Animals;
 
-import Interfaces.IDigestiveSystem;
-import Interfaces.IRespiratorySystem;
 import Enums.DigestionType;
 import Enums.RespirationType;
+import Interfaces.IDigestiveSystem;
+import Interfaces.IRespiratorySystem;
+
 import java.util.Locale;
 
 public abstract class Animal implements IDigestiveSystem, IRespiratorySystem {
@@ -54,5 +55,13 @@ public abstract class Animal implements IDigestiveSystem, IRespiratorySystem {
         typeOfDigest += " is " + this.digestionType.toString();
 
         System.out.println(typeOfDigest);
+    }
+
+    public DigestionType getDigestionType() {
+        return digestionType;
+    }
+
+    public RespirationType getRespirationType() {
+        return respirationType;
     }
 }

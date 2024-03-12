@@ -65,5 +65,40 @@ public class Main {
                 1
         );
         deer.getAntlers();
+
+
+        Wolf wolf = new Wolf(
+                "Lobezno",
+                "Cervidae",
+                "01/01/2022",
+                "Cervidae",
+                DigestionType.HERVIBORE,
+                RespirationType.PULMONARY
+        );
+        Wolf wolfCouple = new Wolf(
+                "Lobezna",
+                "Cervidae",
+                "01/01/2022",
+                "Cervidae",
+                DigestionType.HERVIBORE,
+                RespirationType.PULMONARY
+        );
+        wolf.breath();
+        wolfCouple.breath();
+        Wolf child = (Wolf) wolf.reproduce(wolfCouple);
+        child.breath();
+
+        Starfish starfish = new Starfish(
+                "Doli",
+                "Delphinidae",
+                "02/02/2022",
+                "Delphinidae",
+                DigestionType.CARNIVORE,
+                RespirationType.BRANCHIAL
+        );
+        starfish.breath();
+        Starfish childStarfish = (Starfish) starfish.reproduce();
+        childStarfish.breath();
+
     }
 }
