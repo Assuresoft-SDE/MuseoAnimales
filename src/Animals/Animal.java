@@ -4,10 +4,9 @@ import Enums.DigestionType;
 import Enums.RespirationType;
 import Interfaces.IDigestiveSystem;
 import Interfaces.IRespiratorySystem;
-
 import java.util.Locale;
 
-public abstract class Animal implements IDigestiveSystem, IRespiratorySystem {
+public abstract class Animal implements IDigestiveSystem, IRespiratorySystem, Comparable {
 
     private AnimalInformation information;
     private DigestionType digestionType;
@@ -63,5 +62,16 @@ public abstract class Animal implements IDigestiveSystem, IRespiratorySystem {
 
     public RespirationType getRespirationType() {
         return respirationType;
+    }
+
+    @Override
+    public int compareTo(Object other){
+        if (other instanceof Animal) {
+            Animal otherAnimal = (Animal) other;
+            String otherName = otherAnimal.getInformation().getName();
+            return this.getInformation().getName().compareTo(otherName);
+        } else {
+            throw new ClassCastException("Can only compare Animal objects");
+        }
     }
 }

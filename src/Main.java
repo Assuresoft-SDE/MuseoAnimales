@@ -16,7 +16,6 @@ public class Main {
         catfish.breath();
         catfish.digest();
 
-
         Bat bat = new Bat(
                 "Bati",
                 "Chiroptera",
@@ -29,7 +28,6 @@ public class Main {
         bat.digest();
         bat.emitFrequency(15);
 
-
         Whale whale = new Whale(
                 "Doris",
                 "Cetacea",
@@ -40,7 +38,6 @@ public class Main {
         );
         whale.breath();
         whale.digest();
-
 
         Dolphin dolphin = new Dolphin(
                 "Doli",
@@ -54,7 +51,6 @@ public class Main {
         dolphin.digest();
         dolphin.emitFrequency(50);
 
-
         Deer deer = new Deer(
                 "Bambi",
                 "Cervidae",
@@ -66,27 +62,27 @@ public class Main {
         );
         deer.getAntlers();
 
-
         Wolf wolf = new Wolf(
                 "Lobezno",
-                "Cervidae",
+                "Canidae",
                 "01/01/2022",
                 "Cervidae",
                 DigestionType.HERVIBORE,
                 RespirationType.PULMONARY
         );
-        Wolf wolfCouple = new Wolf(
+
+        Wolf wolfMate = new Wolf(
                 "Lobezna",
-                "Cervidae",
+                "Canidae",
                 "01/01/2022",
                 "Cervidae",
                 DigestionType.HERVIBORE,
                 RespirationType.PULMONARY
         );
         wolf.breath();
-        wolfCouple.breath();
-        Wolf child = (Wolf) wolf.reproduce(wolfCouple);
-        child.breath();
+        wolfMate.breath();
+        Wolf pup = (Wolf) wolf.reproduce(wolfMate);
+        pup.breath();
 
         Starfish starfish = new Starfish(
                 "Doli",
@@ -99,6 +95,5 @@ public class Main {
         starfish.breath();
         Starfish childStarfish = (Starfish) starfish.reproduce();
         childStarfish.breath();
-
     }
 }
