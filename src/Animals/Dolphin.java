@@ -1,24 +1,26 @@
 package Animals;
 
+import Enums.DigestionType;
+import Enums.RespirationType;
 import Interfaces.IEcholocationSystem;
-import enums.DigestionType;
 
 public class Dolphin extends Animal implements IEcholocationSystem {
 
-    public Dolphin(String name, String scientificName, String admissionDate, String family) {
-        super(name, scientificName, admissionDate, family);
+    public Dolphin(
+            String name,
+            String scientificName,
+            String admissionDate,
+            String family,
+            DigestionType digestionType,
+            RespirationType respirationType
+    ){
+        super(name, scientificName, admissionDate, family, digestionType, respirationType);
     }
 
     @Override
-    public void digest(DigestionType digestionType) {
-        String typeOfDigest = "The dolphin are ";
-        typeOfDigest += digestionType.toString();
+    public void emitFrequency(int frequency) {
+        String frequencyToEmit = "The dolphin emits frequency of " + frequency;
 
-        System.out.println(typeOfDigest);
-    }
-
-    @Override
-    public void emitSound(int frequency) {
-        System.out.println("Sound of dolphin echolocation");
+        System.out.println(frequencyToEmit);
     }
 }

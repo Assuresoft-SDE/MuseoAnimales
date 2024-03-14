@@ -2,5 +2,5 @@ package Interfaces;
 
 public interface IEcholocationSystem {
 
-    void emitSound(int frequency);
+    void emitFrequency(int frequency);
 }

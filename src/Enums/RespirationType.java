@@ -1,4 +1,4 @@
-package enums;
+package Enums;
 
 public enum RespirationType {
     PULMONARY("lungs"),
@@ -6,14 +6,14 @@ public enum RespirationType {
     TRACHEAS("trachea"),
     CUTANEOUS("skin");
 
-    private String value;
+    private String organ;
 
-    RespirationType(String value){
-        this.value = value;
+    RespirationType(String organ){
+        this.organ = organ;
     }
 
     @Override
     public String toString() {
-        return this.value;
+        return this.organ;
     }
 }

@@ -1,47 +1,102 @@
-import Animals.Bat;
-import Animals.Catfish;
-import Animals.Dolphin;
-import Animals.Whale;
-import enums.DigestionType;
-import enums.RespirationType;
+import Animals.*;
+import Enums.DigestionType;
+import Enums.RespirationType;
 
 public class Main {
     public static void main(String [] args){
         Catfish catfish = new Catfish(
-            "Nemo",
-            "Siluriformes",
+            "Pedro",
+            "Siluriforme",
             "02/02/2022",
-            "Ictaluridae"
+            "Ictaluridae",
+                DigestionType.OMNIVORE,
+                RespirationType.TRACHEAS
+
         );
-        catfish.digest(DigestionType.OMNIVORE);
+        catfish.breath();
+        catfish.digest();
 
         Bat bat = new Bat(
                 "Bati",
                 "Chiroptera",
                 "03/02/2022",
-                "Microchiroptera"
+                "Microchiroptera",
+                DigestionType.OMNIVORE,
+                RespirationType.PULMONARY
         );
-        bat.breath(RespirationType.PULMONARY);
-        bat.digest(DigestionType.OMNIVORE);
-        bat.emitSound(15);
+        bat.breath();
+        bat.digest();
+        bat.emitFrequency(15);
+
 
         Whale whale = new Whale(
-                "Dora",
+                "Doris",
                 "Cetacea",
                 "02/02/2022",
-                "Cetacean"
+                "Cetacean",
+                DigestionType.CARNIVORE,
+                RespirationType.BRANCHIAL
         );
-        whale.breath(RespirationType.BRANCHIAL);
-        whale.digest(DigestionType.CARNIVORE);
+        whale.breath();
+        whale.digest();
+
 
         Dolphin dolphin = new Dolphin(
-                "Deli",
+                "Doli",
                 "Delphinidae",
                 "02/02/2022",
-                "Delphinidae"
+                "Delphinidae",
+                DigestionType.CARNIVORE,
+                RespirationType.BRANCHIAL
         );
-        dolphin.breath(RespirationType.BRANCHIAL);
-        dolphin.digest(DigestionType.CARNIVORE);
-        dolphin.emitSound(50);
+        dolphin.breath();
+        dolphin.digest();
+        dolphin.emitFrequency(50);
+
+
+        Deer deer = new Deer(
+                "Bambi",
+                "Cervidae",
+                "01/01/2022",
+                "Cervidae",
+                DigestionType.HERVIBORE,
+                RespirationType.PULMONARY,
+                1
+        );
+        deer.getAntlers();
+
+
+        Wolf wolf = new Wolf(
+                "Lobezno",
+                "Cervidae",
+                "01/01/2022",
+                "Cervidae",
+                DigestionType.HERVIBORE,
+                RespirationType.PULMONARY
+        );
+        Wolf wolfCouple = new Wolf(
+                "Lobezna",
+                "Cervidae",
+                "01/01/2022",
+                "Cervidae",
+                DigestionType.HERVIBORE,
+                RespirationType.PULMONARY
+        );
+        wolf.breath();
+        wolfCouple.breath();
+        Wolf child = (Wolf) wolf.reproduce(wolfCouple);
+        child.breath();
+
+        Starfish starfish = new Starfish(
+                "Doli",
+                "Delphinidae",
+                "02/02/2022",
+                "Delphinidae",
+                DigestionType.CARNIVORE,
+                RespirationType.BRANCHIAL
+        );
+        starfish.breath();
+        Starfish childStarfish = (Starfish) starfish.reproduce();
+        childStarfish.breath();
     }
 }

@@ -1,23 +1,38 @@
 package Animals;
 
-import enums.DigestionType;
+import Enums.DigestionType;
+import Enums.RespirationType;
+import Interfaces.ISexualReproductionSystem;
 
-public class Bat extends Chiropters{
+public class Bat extends Chiropters implements ISexualReproductionSystem {
 
-    public Bat(String name, String scientificName, String admissionDate, String family) {
-        super(name, scientificName, admissionDate, family);
+    public Bat(
+            String name,
+            String scientificName,
+            String admissionDate,
+            String family,
+            DigestionType digestionType,
+            RespirationType respirationType
+    ){
+        super(name, scientificName, admissionDate, family, digestionType, respirationType);
     }
 
     @Override
-    public void emitSound(int frequency) {
-        System.out.println("The bat emit frequency: " + frequency);
-    }
+    public Animal reproduce(Animal couple) {
+        if(!(couple instanceof Bat)){
+            return null;
+        }
+        String childName =
+                this.getInformation().getName() + " " +
+                        couple.getInformation().getName();
 
-    @Override
-    public void digest(DigestionType digestionType) {
-        String typeOfDigest = "The bat are ";
-        typeOfDigest += digestionType.toString();
-
-        System.out.println(typeOfDigest);
+        return new Bat(
+                childName,
+                this.getInformation().getScientificName(),
+                this.getInformation().getAdmissionDate(),
+                this.getInformation().getFamily(),
+                this.getDigestionType(),
+                this.getRespirationType()
+        );
     }
 }

@@ -1,20 +1,38 @@
 package Animals;
 
+import Enums.DigestionType;
+import Enums.RespirationType;
+import Interfaces.ISexualReproductionSystem;
 
-import enums.DigestionType;
+public class Cougar extends Animal implements ISexualReproductionSystem {
 
-public class Cougar extends Animal{
-
-    public Cougar(String name, String scientificName, String admissionDate, String family) {
-        super(name, scientificName, admissionDate, family);
+    public Cougar(
+            String name,
+            String scientificName,
+            String admissionDate,
+            String family,
+            DigestionType digestionType,
+            RespirationType respirationType
+    ){
+        super(name, scientificName, admissionDate, family, digestionType, respirationType);
     }
 
     @Override
-    public void digest(DigestionType digestionType) {
-        String typeOfDigest = "The cougar are ";
-        typeOfDigest += digestionType.toString();
+    public Animal reproduce(Animal couple) {
+        if(!(couple instanceof Cougar)){
+            return null;
+        }
+        String childName =
+                this.getInformation().getName() + " " +
+                        couple.getInformation().getName();
 
-        System.out.println(typeOfDigest);
+        return new Cougar(
+                childName,
+                this.getInformation().getScientificName(),
+                this.getInformation().getAdmissionDate(),
+                this.getInformation().getFamily(),
+                this.getDigestionType(),
+                this.getRespirationType()
+        );
     }
-
 }

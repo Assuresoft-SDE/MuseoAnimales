@@ -15,21 +15,20 @@ public class Museum {
     }
 
     public String searchAnimal(Animal animal) {
-        String animalName = animal.getName();
+        String animalName = animal.getInformation().getName();
         int searchedIndex = jumpSearch(animalName, 5);
         if (searchedIndex < 0) {
             return "No es encontro el animal.";
         } else {
-            return animalCollection.get(searchedIndex).getInformation();
+            return animalCollection.get(searchedIndex).getInformation().getName();
         }
-        return "";
     }
 
     private int jumpSearch(String targetAnimalName, int jump) {
         int index = 0, lowerIndex = -1;
         boolean continueSearching = true;
         while (index < animalCollection.size() && continueSearching) {
-            String currentAnimalName = animalCollection.get(index).getName();
+            String currentAnimalName = animalCollection.get(index).getInformation().getName();
             if (currentAnimalName.compareTo(targetAnimalName) > 0) {
                 lowerIndex = index - jump;
                 continueSearching = false;
@@ -40,7 +39,7 @@ public class Museum {
         }
         if (lowerIndex == -1) return -1;
         while (lowerIndex < animalCollection.size()) {
-            String currentAnimalName = animalCollection.get(lowerIndex).getName();
+            String currentAnimalName = animalCollection.get(lowerIndex).getInformation().getName();
             if(currentAnimalName.compareTo(targetAnimalName) == 0){
                 return lowerIndex;
             }

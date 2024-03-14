@@ -1,19 +1,38 @@
 package Animals;
 
-import enums.DigestionType;
+import Enums.DigestionType;
+import Enums.RespirationType;
+import Interfaces.ISexualReproductionSystem;
 
-public class Catfish extends Animal{
+public class Catfish extends Animal implements ISexualReproductionSystem {
 
-    public Catfish(String name, String scientificName, String admissionDate, String family) {
-        super(name, scientificName, admissionDate, family);
+    public Catfish(
+            String name,
+            String scientificName,
+            String admissionDate,
+            String family,
+            DigestionType digestionType,
+            RespirationType respirationType
+    ){
+        super(name, scientificName, admissionDate, family, digestionType, respirationType);
     }
 
     @Override
-    public void digest(DigestionType digestionType) {
-        String typeOfDigest = "The catfish are ";
-        typeOfDigest += digestionType.toString();
+    public Animal reproduce(Animal couple) {
+        if (!(couple instanceof Catfish)) {
+            return null;
+        }
+        String childName =
+                this.getInformation().getName() + " " +
+                        couple.getInformation().getName();
 
-        System.out.println(typeOfDigest);
+        return new Catfish(
+                childName,
+                this.getInformation().getScientificName(),
+                this.getInformation().getAdmissionDate(),
+                this.getInformation().getFamily(),
+                this.getDigestionType(),
+                this.getRespirationType()
+        );
     }
-
 }

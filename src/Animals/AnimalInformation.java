@@ -18,12 +18,8 @@ public class AnimalInformation {
         this.family = family;
     }
 
-    public String getAnimalInformation() {
-        return
-                this.name + "\n" +
-                this.scientificName + "\n" +
-                this.admissionDate + "\n" +
-                this.family + "\n";
+    public AnimalInformation getAnimalInformation() {
+        return this;
     }
 
     public String getName() {
@@ -41,5 +37,4 @@ public class AnimalInformation {
     public String getFamily() {
         return family;
     }
-
 }

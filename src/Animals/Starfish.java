@@ -2,11 +2,11 @@ package Animals;
 
 import Enums.DigestionType;
 import Enums.RespirationType;
-import Interfaces.ISexualReproductionSystem;
+import Interfaces.IAsexualReproductionSystem;
 
-public class Condor extends Animal implements ISexualReproductionSystem {
+public class Starfish extends Animal implements IAsexualReproductionSystem {
 
-    public Condor(
+    public Starfish(
             String name,
             String scientificName,
             String admissionDate,
@@ -18,15 +18,12 @@ public class Condor extends Animal implements ISexualReproductionSystem {
     }
 
     @Override
-    public Animal reproduce(Animal couple) {
-        if(!(couple instanceof Condor)){
-            return null;
-        }
+    public Animal reproduce() {
         String childName =
-                this.getInformation().getName() + " " +
-                        couple.getInformation().getName();
+                this.getInformation().getName() + " JR";
 
-        return new Condor(
+
+        return new Starfish(
                 childName,
                 this.getInformation().getScientificName(),
                 this.getInformation().getAdmissionDate(),
