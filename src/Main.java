@@ -1,6 +1,9 @@
 import Animals.*;
 import Enums.DigestionType;
 import Enums.RespirationType;
+import Museum.Museum;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -64,35 +67,52 @@ public class Main {
 
         Wolf wolf = new Wolf(
                 "Lobezno",
-                "Cervidae",
+                "Canidae",
                 "01/01/2022",
-                "Cervidae",
+                "Canidae",
                 DigestionType.HERVIBORE,
                 RespirationType.PULMONARY
         );
-        Wolf wolfCouple = new Wolf(
+
+        Wolf wolfMate = new Wolf(
                 "Lobezna",
-                "Cervidae",
+                "Canidae",
                 "01/01/2022",
-                "Cervidae",
+                "Canidae",
                 DigestionType.HERVIBORE,
                 RespirationType.PULMONARY
         );
         wolf.breath();
-        wolfCouple.breath();
-        Wolf child = (Wolf) wolf.reproduce(wolfCouple);
-        child.breath();
+        wolfMate.breath();
+        Wolf pup = (Wolf) wolf.reproduce(wolfMate);
+        pup.breath();
 
         Starfish starfish = new Starfish(
                 "Doli",
-                "Delphinidae",
+                "Asterias",
                 "02/02/2022",
-                "Delphinidae",
+                "Asteriidae",
                 DigestionType.CARNIVORE,
                 RespirationType.BRANCHIAL
         );
         starfish.breath();
         Starfish childStarfish = (Starfish) starfish.reproduce();
         childStarfish.breath();
+
+        List<Animal> animalsList = new ArrayList<>() {{
+            add(catfish);
+            add(bat);
+            add(whale);
+            add(dolphin);
+            add(deer);
+            add(wolf);
+            add(wolfMate);
+            add(starfish);
+        }};
+
+        Museum museum = new Museum("Fantastic exhibitions ");
+        museum.setAnimalCollection(animalsList);
+        String wantedAnimal = museum.searchAnimal("Doli");
+        System.out.println(wantedAnimal);
     }
 }
