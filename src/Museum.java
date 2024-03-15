@@ -15,25 +15,36 @@ public class Museum {
     }
 
 
-    public String searchAnimal(Animal animal) {
-        String animalName = animal.getInformation().getName();
-        int searchedIndex = jumpSearch(animalName, 5);
-        if (searchedIndex < 0) {
-            return "No es encontro el animal.";
-        } else {
-            return animalCollection.get(searchedIndex).getInformation().getName();
-        }
+    /**
+     * This method is used for searching a specific animal informacion
+     * by it's name. The public method uses another auxiliary private method
+     * which implements the searching algorithm JumpSearchAlgorithm
+     *
+     * @param animalName Animal's name which you want to search information about
+     */
+    public String searchAnimal(String animalName) {
+        int jumpSize = 5;
+        int searchedIndex = jumpSearch(animalName, jumpSize);
+        return searchedIndex < 0 ? "No se encontro el animal" : getCurrentAnimalName(searchedIndex);
     }
 
+    /**
+     * This private method implements the JumpSearchAlgorithm,
+     *
+     * @param targetAnimalName Animal's name which you want to search information about
+     * @param jump             The jump number that the algorithm needs, it's fixed and 5 in this case
+     * @return index which specifies the index of the target animal, -1 if it's not found
+     */
     private int jumpSearch(String targetAnimalName, int jump) {
         int index = 0, lowerIndex = -1;
         boolean continueSearching = true;
         while (index < animalCollection.size() && continueSearching) {
-            String currentAnimalName = animalCollection.get(index).getInformation().getName();
+            String currentAnimalName = getCurrentAnimalName(index);
             if (currentAnimalName.compareTo(targetAnimalName) > 0) {
                 lowerIndex = index - jump;
                 continueSearching = false;
-            } else if (currentAnimalName.compareTo(targetAnimalName) == 0) {
+            }
+            else if (currentAnimalName.compareTo(targetAnimalName) == 0) {
                 return index;
             }
             index += jump;
@@ -47,5 +58,15 @@ public class Museum {
             lowerIndex += 1;
         }
         return -1;
+    }
+
+    /**
+     * This method helps us in getting the animal name pointed by the index in animalCollection
+     *
+     * @param index the  index  ( 0 < index < animalCollection.size() )
+     * @return The name of the animal
+     */
+    private String getCurrentAnimalName(int index) {
+        return animalCollection.get(index).getInformation().getName();
     }
 }
