@@ -22,7 +22,6 @@ public class Starfish extends Animal implements IAsexualReproductionSystem {
         String childName =
                 this.getInformation().getName() + " JR";
 
-
         return new Starfish(
                 childName,
                 this.getInformation().getScientificName(),

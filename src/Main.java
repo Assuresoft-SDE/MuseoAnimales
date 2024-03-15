@@ -1,6 +1,9 @@
 import Animals.*;
 import Enums.DigestionType;
 import Enums.RespirationType;
+import Museum.Museum;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -95,5 +98,21 @@ public class Main {
         starfish.breath();
         Starfish childStarfish = (Starfish) starfish.reproduce();
         childStarfish.breath();
+
+        List<Animal> animalsList = new ArrayList<>() {{
+            add(catfish);
+            add(bat);
+            add(whale);
+            add(dolphin);
+            add(deer);
+            add(wolf);
+            add(wolfMate);
+            add(starfish);
+        }};
+
+        Museum museum = new Museum("Fantastic exhibitions ");
+        museum.setAnimalCollection(animalsList);
+        String wantedAnimal = museum.searchAnimal("Doli");
+        System.out.println(wantedAnimal);
     }
 }

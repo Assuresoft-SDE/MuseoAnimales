@@ -1,3 +1,5 @@
+package Museum;
+
 public class MuseumWorker extends Person {
 
 

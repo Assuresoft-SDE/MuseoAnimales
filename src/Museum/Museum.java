@@ -1,5 +1,6 @@
-import Animals.Animal;
+package Museum;
 
+import Animals.Animal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,12 +9,15 @@ public class Museum {
     private List<Exhibition> exhibitionList;
     private List<Animal> animalCollection;
 
-    public Museum(String name, List<Exhibition> exhibitions) {
+    public Museum(String name) {
         this.name = name;
-        this.exhibitionList = exhibitions;
+        this.exhibitionList = new ArrayList<>();;
         animalCollection = new ArrayList<>();
     }
 
+    public void setAnimalCollection(List<Animal> animalCollection){
+        this.animalCollection = animalCollection;
+    }
 
     /**
      * This method is used for searching a specific animal informacion
