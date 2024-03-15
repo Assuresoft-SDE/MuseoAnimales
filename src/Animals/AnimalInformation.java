@@ -6,12 +6,12 @@ public class AnimalInformation {
     private String admissionDate;
     private String family;
 
-    public AnimalInformation (
+    public AnimalInformation(
             String name,
             String scientificName,
             String admissionDate,
             String family
-    ){
+    ) {
         this.name = name;
         this.scientificName = scientificName;
         this.admissionDate = admissionDate;

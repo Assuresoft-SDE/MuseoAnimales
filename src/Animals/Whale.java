@@ -3,7 +3,7 @@ package Animals;
 import Enums.DigestionType;
 import Enums.RespirationType;
 
-public class Whale extends Animal{
+public class Whale extends Animal {
 
     public Whale(
             String name,
@@ -12,7 +12,7 @@ public class Whale extends Animal{
             String family,
             DigestionType digestionType,
             RespirationType respirationType
-    ){
+    ) {
         super(name, scientificName, admissionDate, family, digestionType, respirationType);
     }
 }

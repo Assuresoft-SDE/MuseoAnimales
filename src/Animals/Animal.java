@@ -20,7 +20,7 @@ public abstract class Animal implements IDigestiveSystem, IRespiratorySystem {
             String family,
             DigestionType digestionType,
             RespirationType respirationType
-    ){
+    ) {
         this.information = new AnimalInformation(
                 name,
                 scientificName,
@@ -32,12 +32,12 @@ public abstract class Animal implements IDigestiveSystem, IRespiratorySystem {
         this.respirationType = respirationType;
     }
 
-    public AnimalInformation getInformation(){
+    public AnimalInformation getInformation() {
         return this.information.getAnimalInformation();
     }
 
     @Override
-    public void breath(){
+    public void breath() {
         String animalName = this.information.getName();
         String animalType = this.getClass().getSimpleName().toLowerCase(Locale.ROOT);
 

@@ -13,7 +13,7 @@ public class Dolphin extends Animal implements IEcholocationSystem {
             String family,
             DigestionType digestionType,
             RespirationType respirationType
-    ){
+    ) {
         super(name, scientificName, admissionDate, family, digestionType, respirationType);
     }
 
