@@ -13,13 +13,13 @@ public class Condor extends Animal implements ISexualReproductionSystem {
             String family,
             DigestionType digestionType,
             RespirationType respirationType
-    ){
+    ) {
         super(name, scientificName, admissionDate, family, digestionType, respirationType);
     }
 
     @Override
     public Animal reproduce(Animal couple) {
-        if(!(couple instanceof Condor)){
+        if (!(couple instanceof Condor)) {
             return null;
         }
         String childName =

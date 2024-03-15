@@ -3,7 +3,7 @@ import Enums.DigestionType;
 import Enums.RespirationType;
 
 public class Main {
-    public static void main(String [] args){
+    public static void main(String[] args) {
         Catfish catfish = new Catfish(
                 "Pedro",
                 "Siluriforme",
