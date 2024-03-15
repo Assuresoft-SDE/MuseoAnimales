@@ -5,10 +5,10 @@ import Enums.RespirationType;
 public class Main {
     public static void main(String [] args){
         Catfish catfish = new Catfish(
-            "Pedro",
-            "Siluriforme",
-            "02/02/2022",
-            "Ictaluridae",
+                "Pedro",
+                "Siluriforme",
+                "02/02/2022",
+                "Ictaluridae",
                 DigestionType.OMNIVORE,
                 RespirationType.TRACHEAS
 
@@ -66,7 +66,7 @@ public class Main {
                 "Lobezno",
                 "Canidae",
                 "01/01/2022",
-                "Cervidae",
+                "Canidae",
                 DigestionType.HERVIBORE,
                 RespirationType.PULMONARY
         );
@@ -75,7 +75,7 @@ public class Main {
                 "Lobezna",
                 "Canidae",
                 "01/01/2022",
-                "Cervidae",
+                "Canidae",
                 DigestionType.HERVIBORE,
                 RespirationType.PULMONARY
         );
@@ -86,9 +86,9 @@ public class Main {
 
         Starfish starfish = new Starfish(
                 "Doli",
-                "Delphinidae",
+                "Asterias",
                 "02/02/2022",
-                "Delphinidae",
+                "Asteriidae",
                 DigestionType.CARNIVORE,
                 RespirationType.BRANCHIAL
         );

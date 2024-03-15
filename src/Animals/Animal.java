@@ -6,7 +6,7 @@ import Interfaces.IDigestiveSystem;
 import Interfaces.IRespiratorySystem;
 import java.util.Locale;
 
-public abstract class Animal implements IDigestiveSystem, IRespiratorySystem, Comparable {
+public abstract class Animal implements IDigestiveSystem, IRespiratorySystem, Comparable<Animal> {
 
     private AnimalInformation information;
     private DigestionType digestionType;
@@ -65,13 +65,8 @@ public abstract class Animal implements IDigestiveSystem, IRespiratorySystem, Co
     }
 
     @Override
-    public int compareTo(Object other){
-        if (other instanceof Animal) {
-            Animal otherAnimal = (Animal) other;
-            String otherName = otherAnimal.getInformation().getName();
-            return this.getInformation().getName().compareTo(otherName);
-        } else {
-            throw new ClassCastException("Can only compare Animal objects");
-        }
+    public int compareTo(Animal other){
+        String otherName = other.getInformation().getName();
+        return this.getInformation().getName().compareTo(otherName);
     }
 }
