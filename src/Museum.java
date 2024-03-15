@@ -8,9 +8,9 @@ public class Museum {
     private List<Exhibition> exhibitionList;
     private List<Animal> animalCollection;
 
-    public Museum(String name, List<Exhibition> exhibitions) {
+    public Museum(String name) {
         this.name = name;
-        this.exhibitionList = exhibitions;
+        exhibitionList = new ArrayList<>();
         animalCollection = new ArrayList<>();
     }
 
