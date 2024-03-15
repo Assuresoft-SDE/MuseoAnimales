@@ -3,6 +3,7 @@ package Animals;
 import Enums.DigestionType;
 import Enums.RespirationType;
 import Interfaces.IEcholocationSystem;
+
 import java.util.Locale;
 
 abstract class Chiropters extends Animal implements IEcholocationSystem {
@@ -14,7 +15,7 @@ abstract class Chiropters extends Animal implements IEcholocationSystem {
             String family,
             DigestionType digestionType,
             RespirationType respirationType
-    ){
+    ) {
         super(name, scientificName, admissionDate, family, digestionType, respirationType);
     }
 

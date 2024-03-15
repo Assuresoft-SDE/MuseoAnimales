@@ -8,7 +8,7 @@ public enum RespirationType {
 
     private String organ;
 
-    RespirationType(String organ){
+    RespirationType(String organ) {
         this.organ = organ;
     }
 

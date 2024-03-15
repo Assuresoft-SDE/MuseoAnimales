@@ -6,29 +6,28 @@ public class ConsoleVisitor implements IConsole {
     private BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
 
     @Override
-    public void run(){
+    public void run() {
         boolean appRunning = true;
         System.out.println("What's your name? ");
         String visitorName = "";
-        try{
+        try {
             visitorName = input.readLine();
+        } catch (IOException exc) {
         }
-        catch(IOException exc){
-        }
-        System.out.println("Welcome to the museum "+visitorName+"!!");
-        while(appRunning){
+        System.out.println("Welcome to the museum " + visitorName + "!!");
+
+        while (appRunning) {
             int optionValue = -1;
             System.out.println("You have this options: ");
             System.out.println("    1.- See all animals.");
             System.out.println("    2.- Search an animal by name.");
             System.out.println("    3.- Exit");
             System.out.print("Select one: ");
-            try{
+            try {
                 optionValue = Integer.parseInt(input.readLine());
+            } catch (IOException exc) {
             }
-            catch(IOException exc){
-            }
-            switch (optionValue){
+            switch (optionValue) {
                 case 1:
                     System.out.println("Show all animals");
                     //show animals

@@ -13,13 +13,13 @@ public class Bat extends Chiropters implements ISexualReproductionSystem {
             String family,
             DigestionType digestionType,
             RespirationType respirationType
-    ){
+    ) {
         super(name, scientificName, admissionDate, family, digestionType, respirationType);
     }
 
     @Override
     public Animal reproduce(Animal couple) {
-        if(!(couple instanceof Bat)){
+        if (!(couple instanceof Bat)) {
             return null;
         }
         String childName =

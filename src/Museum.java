@@ -14,6 +14,7 @@ public class Museum {
         animalCollection = new ArrayList<>();
     }
 
+
     public String searchAnimal(Animal animal) {
         String animalName = animal.getInformation().getName();
         int searchedIndex = jumpSearch(animalName, 5);
@@ -40,7 +41,7 @@ public class Museum {
         if (lowerIndex == -1) return -1;
         while (lowerIndex < animalCollection.size()) {
             String currentAnimalName = animalCollection.get(lowerIndex).getInformation().getName();
-            if(currentAnimalName.compareTo(targetAnimalName) == 0){
+            if (currentAnimalName.compareTo(targetAnimalName) == 0) {
                 return lowerIndex;
             }
             lowerIndex += 1;

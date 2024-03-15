@@ -13,7 +13,7 @@ public class Starfish extends Animal implements IAsexualReproductionSystem {
             String family,
             DigestionType digestionType,
             RespirationType respirationType
-    ){
+    ) {
         super(name, scientificName, admissionDate, family, digestionType, respirationType);
     }
 

@@ -3,12 +3,12 @@ import Enums.DigestionType;
 import Enums.RespirationType;
 
 public class Main {
-    public static void main(String [] args){
+    public static void main(String[] args) {
         Catfish catfish = new Catfish(
-            "Pedro",
-            "Siluriforme",
-            "02/02/2022",
-            "Ictaluridae",
+                "Pedro",
+                "Siluriforme",
+                "02/02/2022",
+                "Ictaluridae",
                 DigestionType.OMNIVORE,
                 RespirationType.TRACHEAS
 
@@ -28,7 +28,6 @@ public class Main {
         bat.digest();
         bat.emitFrequency(15);
 
-
         Whale whale = new Whale(
                 "Doris",
                 "Cetacea",
@@ -39,7 +38,6 @@ public class Main {
         );
         whale.breath();
         whale.digest();
-
 
         Dolphin dolphin = new Dolphin(
                 "Doli",
@@ -53,7 +51,6 @@ public class Main {
         dolphin.digest();
         dolphin.emitFrequency(50);
 
-
         Deer deer = new Deer(
                 "Bambi",
                 "Cervidae",
@@ -64,7 +61,6 @@ public class Main {
                 1
         );
         deer.getAntlers();
-
 
         Wolf wolf = new Wolf(
                 "Lobezno",

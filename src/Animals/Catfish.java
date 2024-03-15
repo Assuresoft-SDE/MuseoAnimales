@@ -13,7 +13,7 @@ public class Catfish extends Animal implements ISexualReproductionSystem {
             String family,
             DigestionType digestionType,
             RespirationType respirationType
-    ){
+    ) {
         super(name, scientificName, admissionDate, family, digestionType, respirationType);
     }
 

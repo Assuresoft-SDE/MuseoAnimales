@@ -7,7 +7,7 @@ public enum DigestionType {
 
     private String value;
 
-    DigestionType(String value){
+    DigestionType(String value) {
         this.value = value;
     }
 

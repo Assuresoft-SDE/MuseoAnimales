@@ -1,7 +1,7 @@
-public class ConsoleMuseumWorker implements IConsole{
-    
+public class ConsoleMuseumWorker implements IConsole {
+
     @Override
-    public void run(){
+    public void run() {
 
     }
 }

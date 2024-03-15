@@ -8,7 +8,6 @@ public class Exhibition {
     private MuseumWorker lecturer;
     private List<Animal> animalsExposed;
 
-
     public boolean registerToExhibition() {
         return false;
     }
