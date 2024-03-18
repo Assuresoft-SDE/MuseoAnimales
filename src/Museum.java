@@ -15,6 +15,10 @@ public class Museum {
     }
 
 
+    public void addAnimalCollection(List<Animal> animalCollection) {
+        this.animalCollection = animalCollection;
+    }
+
     /**
      * This method is used for searching a specific animal informacion
      * by it's name. The public method uses another auxiliary private method
@@ -43,8 +47,7 @@ public class Museum {
             if (currentAnimalName.compareTo(targetAnimalName) > 0) {
                 lowerIndex = index - jump;
                 continueSearching = false;
-            }
-            else if (currentAnimalName.compareTo(targetAnimalName) == 0) {
+            } else if (currentAnimalName.compareTo(targetAnimalName) == 0) {
                 return index;
             }
             index += jump;
