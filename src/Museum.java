@@ -15,6 +15,11 @@ public class Museum {
     }
 
 
+    /**
+     * This method is used for adding a new collection of animals to
+     * the museum.
+     * @param animalCollection New collection of animals
+     */
     public void addAnimalCollection(List<Animal> animalCollection) {
         this.animalCollection = animalCollection;
     }
