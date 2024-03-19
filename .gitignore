@@ -3,3 +3,8 @@
 out
 out/*
 .gitignore
+target/
+release.properties
+dependencia-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
