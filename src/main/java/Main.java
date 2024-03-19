@@ -2,6 +2,9 @@ import Animals.*;
 import Enums.DigestionType;
 import Enums.RespirationType;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
         Catfish catfish = new Catfish(
@@ -13,8 +16,6 @@ public class Main {
                 RespirationType.TRACHEAS
 
         );
-        catfish.breath();
-        catfish.digest();
 
         Bat bat = new Bat(
                 "Bati",
@@ -24,9 +25,6 @@ public class Main {
                 DigestionType.OMNIVORE,
                 RespirationType.PULMONARY
         );
-        bat.breath();
-        bat.digest();
-        bat.emitFrequency(15);
 
         Whale whale = new Whale(
                 "Doris",
@@ -36,8 +34,6 @@ public class Main {
                 DigestionType.CARNIVORE,
                 RespirationType.BRANCHIAL
         );
-        whale.breath();
-        whale.digest();
 
         Dolphin dolphin = new Dolphin(
                 "Doli",
@@ -47,9 +43,6 @@ public class Main {
                 DigestionType.CARNIVORE,
                 RespirationType.BRANCHIAL
         );
-        dolphin.breath();
-        dolphin.digest();
-        dolphin.emitFrequency(50);
 
         Deer deer = new Deer(
                 "Bambi",
@@ -60,7 +53,6 @@ public class Main {
                 RespirationType.PULMONARY,
                 1
         );
-        deer.getAntlers();
 
         Wolf wolf = new Wolf(
                 "Lobezno",
@@ -70,29 +62,41 @@ public class Main {
                 DigestionType.HERVIBORE,
                 RespirationType.PULMONARY
         );
-        Wolf wolfCouple = new Wolf(
-                "Lobezna",
-                "Cervidae",
-                "01/01/2022",
-                "Cervidae",
-                DigestionType.HERVIBORE,
-                RespirationType.PULMONARY
-        );
-        wolf.breath();
-        wolfCouple.breath();
-        Wolf child = (Wolf) wolf.reproduce(wolfCouple);
-        child.breath();
 
         Starfish starfish = new Starfish(
-                "Doli",
+                "Dola",
                 "Delphinidae",
                 "02/02/2022",
                 "Delphinidae",
                 DigestionType.CARNIVORE,
                 RespirationType.BRANCHIAL
         );
-        starfish.breath();
-        Starfish childStarfish = (Starfish) starfish.reproduce();
-        childStarfish.breath();
+
+        List<Animal> animalCollection = new ArrayList<>();
+        animalCollection.add(starfish);
+        animalCollection.add(wolf);
+        animalCollection.add(deer);
+        animalCollection.add(dolphin);
+        animalCollection.add(whale);
+        animalCollection.add(bat);
+        animalCollection.add(catfish);
+
+        Museum museum = new Museum("Great Museum");
+        museum.addAnimalCollection(animalCollection);
+        String wantedPedro = museum.searchAnimal("Pedro");
+        String wantedBambi = museum.searchAnimal("Bambi");
+        String wantedDoli = museum.searchAnimal("Doli");
+        String wantedDoris = museum.searchAnimal("Doris");
+        String wantedLobezno = museum.searchAnimal("Lobezno");
+        String wantedBati = museum.searchAnimal("Bati");
+        String wantedLion = museum.searchAnimal("Lion");
+
+        System.out.println(wantedPedro);
+        System.out.println(wantedBambi);
+        System.out.println(wantedDoli);
+        System.out.println(wantedDoris);
+        System.out.println(wantedLobezno);
+        System.out.println(wantedBati);
+        System.out.println(wantedLion);
     }
 }
