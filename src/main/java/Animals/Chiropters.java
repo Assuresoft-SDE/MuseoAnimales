@@ -24,7 +24,6 @@ abstract class Chiropters extends Animal implements IEcholocationSystem {
         String animalName = this.getClass().getSimpleName().toLowerCase(Locale.ROOT);
         String frequencyToEmit = "The " + animalName;
         frequencyToEmit += " emits frequency of " + frequency;
-
         System.out.println(frequencyToEmit);
     }
 }

@@ -20,7 +20,6 @@ public class Dolphin extends Animal implements IEcholocationSystem {
     @Override
     public void emitFrequency(int frequency) {
         String frequencyToEmit = "The dolphin emits frequency of " + frequency;
-
         System.out.println(frequencyToEmit);
     }
 }

@@ -19,12 +19,11 @@ public class Condor extends Animal implements ISexualReproductionSystem {
 
     @Override
     public Animal reproduce(Animal couple) {
-        if (!(couple instanceof Condor)) {
+        if (!( couple instanceof Condor )) {
             return null;
         }
-        String childName =
-                this.getInformation().getName() + " " +
-                        couple.getInformation().getName();
+        String childName = this.getInformation().getName() + " " +
+                couple.getInformation().getName();
 
         return new Condor(
                 childName,

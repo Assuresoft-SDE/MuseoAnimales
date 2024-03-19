@@ -19,12 +19,11 @@ public class Cougar extends Animal implements ISexualReproductionSystem {
 
     @Override
     public Animal reproduce(Animal couple) {
-        if (!(couple instanceof Cougar)) {
+        if (!( couple instanceof Cougar )) {
             return null;
         }
-        String childName =
-                this.getInformation().getName() + " " +
-                        couple.getInformation().getName();
+        String childName = this.getInformation().getName() + " " +
+                couple.getInformation().getName();
 
         return new Cougar(
                 childName,

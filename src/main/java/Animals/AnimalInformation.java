@@ -18,6 +18,7 @@ public class AnimalInformation {
         this.family = family;
     }
 
+
     public String getName() {
         return name;
     }

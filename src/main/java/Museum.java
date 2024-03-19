@@ -53,12 +53,14 @@ public class Museum {
             if (currentAnimalName.compareTo(targetAnimalName) > 0) {
                 lowerIndex = index - jump;
                 continueSearching = false;
-            } else if (currentAnimalName.compareTo(targetAnimalName) == 0) {
+            }
+            else if (currentAnimalName.compareTo(targetAnimalName) == 0) {
                 return index;
             }
             index += jump;
         }
-        if (lowerIndex == -1) return -1;
+        if (lowerIndex == -1)
+            return -1;
         while (lowerIndex < animalCollection.size()) {
             String currentAnimalName = animalCollection.get(lowerIndex).getInformation().getName();
             if (currentAnimalName.compareTo(targetAnimalName) == 0) {

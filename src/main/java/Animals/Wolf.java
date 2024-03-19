@@ -19,7 +19,7 @@ public class Wolf extends Animal implements ISexualReproductionSystem {
 
     @Override
     public Animal reproduce(Animal couple) {
-        if (!(couple instanceof Wolf)) {
+        if (!( couple instanceof Wolf )) {
             return null;
         }
         String childName =

@@ -22,10 +22,8 @@ public class Catfish extends Animal implements ISexualReproductionSystem {
         if (!(couple instanceof Catfish)) {
             return null;
         }
-        String childName =
-                this.getInformation().getName() + " " +
-                        couple.getInformation().getName();
-
+        String childName = this.getInformation().getName() + " " +
+                couple.getInformation().getName();
         return new Catfish(
                 childName,
                 this.getInformation().getScientificName(),

@@ -22,10 +22,8 @@ public class Bat extends Chiropters implements ISexualReproductionSystem {
         if (!(couple instanceof Bat)) {
             return null;
         }
-        String childName =
-                this.getInformation().getName() + " " +
-                        couple.getInformation().getName();
-
+        String childName = this.getInformation().getName() + " " +
+                couple.getInformation().getName();
         return new Bat(
                 childName,
                 this.getInformation().getScientificName(),
