@@ -1,7 +1,9 @@
-import Animals.*;
-import Enums.DigestionType;
-import Enums.RespirationType;
+package main;
 
+import animals.*;
+import enums.DigestionType;
+import enums.RespirationType;
+import museum.Museum;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -56,22 +58,20 @@ public class Main {
 
         Wolf wolf = new Wolf(
                 "Lobezno",
-                "Cervidae",
+                "Canidae",
                 "01/01/2022",
-                "Cervidae",
+                "Canidae",
                 DigestionType.HERVIBORE,
                 RespirationType.PULMONARY
         );
-
         Starfish starfish = new Starfish(
                 "Dola",
                 "Delphinidae",
                 "02/02/2022",
-                "Delphinidae",
+                "Asteriidae",
                 DigestionType.CARNIVORE,
                 RespirationType.BRANCHIAL
         );
-
         List<Animal> animalCollection = new ArrayList<>();
         animalCollection.add(starfish);
         animalCollection.add(wolf);

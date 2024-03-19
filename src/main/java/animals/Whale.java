@@ -1,7 +1,7 @@
-package Animals;
+package animals;
 
-import Enums.DigestionType;
-import Enums.RespirationType;
+import enums.DigestionType;
+import enums.RespirationType;
 
 public class Whale extends Animal {
 

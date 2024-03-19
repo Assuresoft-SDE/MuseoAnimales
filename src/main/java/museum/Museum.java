@@ -1,5 +1,6 @@
-import Animals.Animal;
+package museum;
 
+import animals.Animal;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -15,6 +16,9 @@ public class Museum {
         animalCollection = new ArrayList<>();
     }
 
+    public void setAnimalCollection(List<Animal> animalCollection){
+        this.animalCollection = animalCollection;
+    }
 
     /**
      * This method is used for adding a new collection of animals to

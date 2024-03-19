@@ -1,3 +1,5 @@
+package museum;
+
 public class MuseumWorker extends Person {
 
     public Exhibition createExhibition() {

@@ -1,12 +1,12 @@
-package Animals;
+package animals;
 
-import Enums.DigestionType;
-import Enums.RespirationType;
-import Interfaces.ISexualReproductionSystem;
+import enums.DigestionType;
+import enums.RespirationType;
+import interfaces.ISexualReproductionSystem;
 
-public class Condor extends Animal implements ISexualReproductionSystem {
+public class Bat extends Chiropters implements ISexualReproductionSystem {
 
-    public Condor(
+    public Bat(
             String name,
             String scientificName,
             String admissionDate,
@@ -19,13 +19,12 @@ public class Condor extends Animal implements ISexualReproductionSystem {
 
     @Override
     public Animal reproduce(Animal couple) {
-        if (!( couple instanceof Condor )) {
+        if (!(couple instanceof Bat)) {
             return null;
         }
         String childName = this.getInformation().getName() + " " +
                 couple.getInformation().getName();
-
-        return new Condor(
+        return new Bat(
                 childName,
                 this.getInformation().getScientificName(),
                 this.getInformation().getAdmissionDate(),

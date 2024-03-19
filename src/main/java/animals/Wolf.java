@@ -1,8 +1,8 @@
-package Animals;
+package animals;
 
-import Enums.DigestionType;
-import Enums.RespirationType;
-import Interfaces.ISexualReproductionSystem;
+import enums.DigestionType;
+import enums.RespirationType;
+import interfaces.ISexualReproductionSystem;
 
 public class Wolf extends Animal implements ISexualReproductionSystem {
 

@@ -1,12 +1,12 @@
-package Animals;
+package animals;
 
-import Enums.DigestionType;
-import Enums.RespirationType;
-import Interfaces.ISexualReproductionSystem;
+import enums.DigestionType;
+import enums.RespirationType;
+import interfaces.ISexualReproductionSystem;
 
-public class Catfish extends Animal implements ISexualReproductionSystem {
+public class Condor extends Animal implements ISexualReproductionSystem {
 
-    public Catfish(
+    public Condor(
             String name,
             String scientificName,
             String admissionDate,
@@ -19,12 +19,13 @@ public class Catfish extends Animal implements ISexualReproductionSystem {
 
     @Override
     public Animal reproduce(Animal couple) {
-        if (!(couple instanceof Catfish)) {
+        if (!( couple instanceof Condor )) {
             return null;
         }
         String childName = this.getInformation().getName() + " " +
                 couple.getInformation().getName();
-        return new Catfish(
+
+        return new Condor(
                 childName,
                 this.getInformation().getScientificName(),
                 this.getInformation().getAdmissionDate(),

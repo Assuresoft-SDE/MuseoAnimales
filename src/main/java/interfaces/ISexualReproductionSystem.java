@@ -1,6 +1,6 @@
-package Interfaces;
+package interfaces;
 
-import Animals.Animal;
+import animals.Animal;
 
 public interface ISexualReproductionSystem {
     Animal reproduce(Animal couple);

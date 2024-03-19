@@ -1,6 +1,8 @@
-import java.util.List;
+package museum;
 
-import Animals.Animal;
+import animals.Animal;
+
+import java.util.List;
 
 public class Exhibition {
     private List<Visitor> assistants;

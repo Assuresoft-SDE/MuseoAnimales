@@ -1,12 +1,12 @@
-package Animals;
+package animals;
 
-import Enums.DigestionType;
-import Enums.RespirationType;
-import Interfaces.ISexualReproductionSystem;
+import enums.DigestionType;
+import enums.RespirationType;
+import interfaces.ISexualReproductionSystem;
 
-public class Bat extends Chiropters implements ISexualReproductionSystem {
+public class Catfish extends Animal implements ISexualReproductionSystem {
 
-    public Bat(
+    public Catfish(
             String name,
             String scientificName,
             String admissionDate,
@@ -19,12 +19,12 @@ public class Bat extends Chiropters implements ISexualReproductionSystem {
 
     @Override
     public Animal reproduce(Animal couple) {
-        if (!(couple instanceof Bat)) {
+        if (!(couple instanceof Catfish)) {
             return null;
         }
         String childName = this.getInformation().getName() + " " +
                 couple.getInformation().getName();
-        return new Bat(
+        return new Catfish(
                 childName,
                 this.getInformation().getScientificName(),
                 this.getInformation().getAdmissionDate(),

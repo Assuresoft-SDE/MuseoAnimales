@@ -1,8 +1,8 @@
-package Animals;
+package animals;
 
-import Enums.DigestionType;
-import Enums.RespirationType;
-import Interfaces.IEcholocationSystem;
+import enums.DigestionType;
+import enums.RespirationType;
+import interfaces.IEcholocationSystem;
 
 public class Dolphin extends Animal implements IEcholocationSystem {
 

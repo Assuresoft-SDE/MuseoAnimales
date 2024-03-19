@@ -1,9 +1,8 @@
-package Animals;
+package animals;
 
-import Enums.DigestionType;
-import Enums.RespirationType;
-import Interfaces.IEcholocationSystem;
-
+import enums.DigestionType;
+import enums.RespirationType;
+import interfaces.IEcholocationSystem;
 import java.util.Locale;
 
 abstract class Chiropters extends Animal implements IEcholocationSystem {

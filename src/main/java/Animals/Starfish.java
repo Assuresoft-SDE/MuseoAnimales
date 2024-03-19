@@ -1,8 +1,8 @@
-package Animals;
+package animals;
 
-import Enums.DigestionType;
-import Enums.RespirationType;
-import Interfaces.IAsexualReproductionSystem;
+import enums.DigestionType;
+import enums.RespirationType;
+import interfaces.IAsexualReproductionSystem;
 
 public class Starfish extends Animal implements IAsexualReproductionSystem {
 

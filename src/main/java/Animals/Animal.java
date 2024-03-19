@@ -1,10 +1,9 @@
-package Animals;
+package animals;
 
-import Enums.DigestionType;
-import Enums.RespirationType;
-import Interfaces.IDigestiveSystem;
-import Interfaces.IRespiratorySystem;
-
+import enums.DigestionType;
+import enums.RespirationType;
+import interfaces.IDigestiveSystem;
+import interfaces.IRespiratorySystem;
 import java.util.Locale;
 
 public abstract class Animal implements IDigestiveSystem, IRespiratorySystem, Comparable<Animal> {
