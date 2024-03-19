@@ -59,7 +59,9 @@ public abstract class Animal implements IDigestiveSystem, IRespiratorySystem, Co
 
     @Override
     public int compareTo(Animal anotherAnimal){
-        return 0;
+        String name = this.getInformation().getName();
+        String otherAnimalName = anotherAnimal.getInformation().getName();
+        return name.compareTo(otherAnimalName);
     }
 
     public DigestionType getDigestionType() {
