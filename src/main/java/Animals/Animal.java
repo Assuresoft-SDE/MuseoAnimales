@@ -7,7 +7,7 @@ import Interfaces.IRespiratorySystem;
 
 import java.util.Locale;
 
-public abstract class Animal implements IDigestiveSystem, IRespiratorySystem {
+public abstract class Animal implements IDigestiveSystem, IRespiratorySystem, Comparable<Animal> {
 
     private AnimalInformation information;
     private DigestionType digestionType;
@@ -55,6 +55,11 @@ public abstract class Animal implements IDigestiveSystem, IRespiratorySystem {
         typeOfDigest += " is " + this.digestionType.toString();
 
         System.out.println(typeOfDigest);
+    }
+
+    @Override
+    public int compareTo(Animal anotherAnimal){
+        return 0;
     }
 
     public DigestionType getDigestionType() {
