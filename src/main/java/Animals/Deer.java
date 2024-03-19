@@ -21,8 +21,7 @@ public class Deer extends Animal {
     }
 
     public void getAntlers() {
-        AnimalInformation information =
-                super.getInformation().getAnimalInformation();
+        AnimalInformation information = super.getInformation();
         String name = information.getName();
         String antlerQuantity = (this.antler == MAX_ANTLERS) ? "antlers" : "antler";
 
