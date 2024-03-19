@@ -2,11 +2,11 @@ package animals;
 
 import enums.DigestionType;
 import enums.RespirationType;
-import interfaces.IAsexualReproductionSystem;
+import interfaces.ISexualReproductionSystem;
 
-public class Starfish extends Animal implements IAsexualReproductionSystem {
+public class Bat extends Chiropters implements ISexualReproductionSystem {
 
-    public Starfish(
+    public Bat(
             String name,
             String scientificName,
             String admissionDate,
@@ -17,15 +17,27 @@ public class Starfish extends Animal implements IAsexualReproductionSystem {
         super(name, scientificName, admissionDate, family, digestionType, respirationType);
     }
 
+
     /**
-     * @return /Animal object instance of a Catfish
      * @Inheritdoc
+     * @return /Animal object in case the mate is a instance of a Bat
+     * @return null in case the mate is not a instance of a Bat
      */
     @Override
-    public Animal reproduce() {
+    public Animal reproduce(Animal mate) {
+        if (!(mate instanceof Bat)) {
+            return null;
+        }
+<<<<<<<< HEAD:src/src/main/java/animals/Bat.java
         String childName =
-                this.getInformation().getName() + " JR";
-        return new Starfish(
+                this.getInformation().getName() + " " +
+                        mate.getInformation().getName();
+
+========
+        String childName = this.getInformation().getName() + " " +
+                couple.getInformation().getName();
+>>>>>>>> develop:src/main/java/animals/Bat.java
+        return new Bat(
                 childName,
                 this.getInformation().getScientificName(),
                 this.getInformation().getAdmissionDate(),

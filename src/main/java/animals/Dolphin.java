@@ -3,11 +3,10 @@ package animals;
 import enums.DigestionType;
 import enums.RespirationType;
 import interfaces.IEcholocationSystem;
-import java.util.Locale;
 
-abstract class Chiropters extends Animal implements IEcholocationSystem {
+public class Dolphin extends Animal implements IEcholocationSystem {
 
-    protected Chiropters(
+    public Dolphin(
             String name,
             String scientificName,
             String admissionDate,
@@ -18,15 +17,14 @@ abstract class Chiropters extends Animal implements IEcholocationSystem {
         super(name, scientificName, admissionDate, family, digestionType, respirationType);
     }
 
-    /**
-     * @Inheritdoc
-     */
     @Override
+<<<<<<<< HEAD:src/src/main/java/animals/Dolphin.java
     public String emitFrequency(int frequency) {
-        String animalName = this.getClass().getSimpleName().toLowerCase(Locale.ROOT);
-        String frequencyToEmit = "The " + animalName;
-        frequencyToEmit += " emits frequency of " + frequency;
-
-        return frequencyToEmit;
+        return "The dolphin emits frequency of " + frequency;
+========
+    public void emitFrequency(int frequency) {
+        String frequencyToEmit = "The dolphin emits frequency of " + frequency;
+        System.out.println(frequencyToEmit);
+>>>>>>>> develop:src/main/java/animals/Dolphin.java
     }
 }

@@ -19,9 +19,9 @@ public class Bat extends Chiropters implements ISexualReproductionSystem {
 
 
     /**
-     * @Inheritdoc
      * @return /Animal object in case the mate is a instance of a Bat
      * @return null in case the mate is not a instance of a Bat
+     * @Inheritdoc
      */
     @Override
     public Animal reproduce(Animal mate) {

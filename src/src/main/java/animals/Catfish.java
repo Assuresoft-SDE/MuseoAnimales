@@ -18,9 +18,9 @@ public class Catfish extends Animal implements ISexualReproductionSystem {
     }
 
     /**
-     * @Inheritdoc
      * @return /Animal object in case the mate is a instance of a Catfish
      * @return null in case the mate is not a instance of a Catfish
+     * @Inheritdoc
      */
     @Override
     public Animal reproduce(Animal mate) {

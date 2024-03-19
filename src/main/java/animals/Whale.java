@@ -2,11 +2,10 @@ package animals;
 
 import enums.DigestionType;
 import enums.RespirationType;
-import interfaces.IEcholocationSystem;
 
-public class Dolphin extends Animal implements IEcholocationSystem {
+public class Whale extends Animal {
 
-    public Dolphin(
+    public Whale(
             String name,
             String scientificName,
             String admissionDate,
@@ -15,13 +14,5 @@ public class Dolphin extends Animal implements IEcholocationSystem {
             RespirationType respirationType
     ) {
         super(name, scientificName, admissionDate, family, digestionType, respirationType);
-    }
-
-    /**
-     * @Inheritdoc
-     */
-    @Override
-    public String emitFrequency(int frequency) {
-        return "The dolphin emits frequency of " + frequency;
     }
 }

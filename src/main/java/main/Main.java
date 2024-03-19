@@ -3,9 +3,12 @@ package main;
 import animals.*;
 import enums.DigestionType;
 import enums.RespirationType;
+<<<<<<<< HEAD:src/src/main/java/main/Main.java
+========
 import museum.Museum;
 import java.util.ArrayList;
 import java.util.List;
+>>>>>>>> develop:src/main/java/main/Main.java
 
 public class Main {
     private static final String ADMISSION_DATE = "02/02/2022";
@@ -67,16 +70,40 @@ public class Main {
                 DigestionType.HERVIBORE,
                 RespirationType.PULMONARY
         );
+<<<<<<<< HEAD:src/src/main/java/main/Main.java
+
+        Wolf wolfMate = new Wolf(
+                "Lobezna",
+                scientificNameWolf,
+                ADMISSION_DATE,
+                scientificNameWolf,
+                DigestionType.HERVIBORE,
+                RespirationType.PULMONARY
+        );
+        wolf.breath();
+        wolfMate.breath();
+        Wolf pup = (Wolf) wolf.reproduce(wolfMate);
+        pup.breath();
+
+        Starfish starfish = new Starfish(
+                "Doli",
+                "Asterias",
+                ADMISSION_DATE,
+========
         Starfish starfish = new Starfish(
                 "Dola",
                 "Delphinidae",
                 "02/02/2022",
-
+>>>>>>>> develop:src/main/java/main/Main.java
                 "Asteriidae",
                 DigestionType.CARNIVORE,
                 RespirationType.BRANCHIAL
         );
-
+<<<<<<<< HEAD:src/src/main/java/main/Main.java
+        starfish.breath();
+        Starfish childStarfish = (Starfish) starfish.reproduce();
+        childStarfish.breath();
+========
         List<Animal> animalCollection = new ArrayList<>();
         animalCollection.add(starfish);
         animalCollection.add(wolf);
@@ -103,5 +130,6 @@ public class Main {
         System.out.println(wantedLobezno);
         System.out.println(wantedBati);
         System.out.println(wantedLion);
+>>>>>>>> develop:src/main/java/main/Main.java
     }
 }

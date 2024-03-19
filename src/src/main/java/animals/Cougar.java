@@ -18,9 +18,9 @@ public class Cougar extends Animal implements ISexualReproductionSystem {
     }
 
     /**
-     * @Inheritdoc
      * @return /Animal object in case the mate is a instance of a Cougar
      * @return null in case the mate is not a instance of a Cougar
+     * @Inheritdoc
      */
     @Override
     public Animal reproduce(Animal mate) {
@@ -30,7 +30,6 @@ public class Cougar extends Animal implements ISexualReproductionSystem {
         String childName =
                 this.getInformation().getName() + " " +
                         mate.getInformation().getName();
-
         return new Cougar(
                 childName,
                 this.getInformation().getScientificName(),
