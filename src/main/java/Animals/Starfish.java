@@ -17,6 +17,10 @@ public class Starfish extends Animal implements IAsexualReproductionSystem {
         super(name, scientificName, admissionDate, family, digestionType, respirationType);
     }
 
+    /**
+     * @Inheritdoc
+     * @return /Animal object instance of a Catfish
+     */
     @Override
     public Animal reproduce() {
         String childName =

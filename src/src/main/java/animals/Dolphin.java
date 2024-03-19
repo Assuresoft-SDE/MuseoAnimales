@@ -17,14 +17,11 @@ public class Dolphin extends Animal implements IEcholocationSystem {
         super(name, scientificName, admissionDate, family, digestionType, respirationType);
     }
 
+    /**
+     * @Inheritdoc
+     */
     @Override
-<<<<<<<< HEAD:src/src/main/java/animals/Dolphin.java
     public String emitFrequency(int frequency) {
         return "The dolphin emits frequency of " + frequency;
-========
-    public void emitFrequency(int frequency) {
-        String frequencyToEmit = "The dolphin emits frequency of " + frequency;
-        System.out.println(frequencyToEmit);
->>>>>>>> develop:src/main/java/animals/Dolphin.java
     }
 }

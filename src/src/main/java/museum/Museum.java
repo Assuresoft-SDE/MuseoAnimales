@@ -1,12 +1,6 @@
 package museum;
-<<<<<<<< HEAD:src/src/main/java/museum/Museum.java
 
 import animals.Animal;
-
-========
-
-import animals.Animal;
->>>>>>>> develop:src/main/java/museum/Museum.java
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -18,11 +12,7 @@ public class Museum {
 
     public Museum(String name) {
         this.name = name;
-<<<<<<<< HEAD:src/src/main/java/museum/Museum.java
-        this.exhibitionList = new ArrayList<>();
-========
         exhibitionList = new ArrayList<>();
->>>>>>>> develop:src/main/java/museum/Museum.java
         animalCollection = new ArrayList<>();
     }
 
