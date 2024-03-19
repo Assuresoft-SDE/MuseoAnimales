@@ -18,10 +18,6 @@ public class AnimalInformation {
         this.family = family;
     }
 
-    public AnimalInformation getAnimalInformation() {
-        return this;
-    }
-
     public String getName() {
         return name;
     }
