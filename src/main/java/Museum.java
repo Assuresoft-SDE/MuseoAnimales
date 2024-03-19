@@ -1,6 +1,7 @@
 import Animals.Animal;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Museum {
@@ -28,14 +29,19 @@ public class Museum {
     /**
      * This method is used for searching a specific animal informacion
      * by it's name. The public method uses another auxiliary private method
-     * which implements the searching algorithm JumpSearchAlgorithm
+     * which implements the searching algorithm JumpSearchAlgorithm.
+     * Animal collection will be sorted by default each time we want to search
+     * cause it's a requirement for the algorithm to work.jjjjj
      *
      * @param animalName Animal's name which you want to search information about
      */
     public String searchAnimal(String animalName) {
+        Collections.sort(animalCollection);
         int jumpSize = 5;
-        int searchedIndex = jumpSearch(animalName, jumpSize);
-        return searchedIndex < 0 ? "No se encontro el animal" : getCurrentAnimalName(searchedIndex);
+        int searchedIndex = jumpSearchAlgorithm(animalName, jumpSize);
+        return searchedIndex < 0 ?
+                "No se encontro el animal." :
+                getCurrentAnimalName(searchedIndex) + " se encuentra en el museo.";
     }
 
     /**
@@ -45,7 +51,7 @@ public class Museum {
      * @param jump             The jump number that the algorithm needs, it's fixed and 5 in this case
      * @return index which specifies the index of the target animal, -1 if it's not found
      */
-    private int jumpSearch(String targetAnimalName, int jump) {
+    private int jumpSearchAlgorithm(String targetAnimalName, int jump) {
         int index = 0, lowerIndex = -1;
         boolean continueSearching = true;
         while (index < animalCollection.size() && continueSearching) {
@@ -57,10 +63,11 @@ public class Museum {
             else if (currentAnimalName.compareTo(targetAnimalName) == 0) {
                 return index;
             }
+            else {
+                lowerIndex = index;
+            }
             index += jump;
         }
-        if (lowerIndex == -1)
-            return -1;
         while (lowerIndex < animalCollection.size()) {
             String currentAnimalName = animalCollection.get(lowerIndex).getInformation().getName();
             if (currentAnimalName.compareTo(targetAnimalName) == 0) {
@@ -79,5 +86,9 @@ public class Museum {
      */
     private String getCurrentAnimalName(int index) {
         return animalCollection.get(index).getInformation().getName();
+    }
+
+    private String getCurrentAnimalType(int index) {
+        return animalCollection.get(index).getClass().toString();
     }
 }
