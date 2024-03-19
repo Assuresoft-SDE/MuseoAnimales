@@ -33,7 +33,7 @@ public abstract class Animal implements IDigestiveSystem, IRespiratorySystem, Co
     }
 
     public AnimalInformation getInformation() {
-        return this.information.getAnimalInformation();
+        return this.information;
     }
 
     @Override
