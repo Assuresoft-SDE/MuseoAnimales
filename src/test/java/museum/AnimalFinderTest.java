@@ -13,10 +13,10 @@ import java.util.List;
 class AnimalFinderTest {
     private AnimalFinder animalFinder;
     private List<Animal> animalCollection;
-
+    final String ADMISSION_DATE = "02/02/2022";
+    
     @BeforeEach
     public void setUp() {
-        final String ADMISSION_DATE = "02/02/2022";
         animalFinder = new AnimalFinder();
         Catfish catfish = new Catfish(
                 "Pedro",
