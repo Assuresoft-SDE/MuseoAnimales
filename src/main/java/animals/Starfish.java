@@ -18,8 +18,8 @@ public class Starfish extends Animal implements IAsexualReproductionSystem {
     }
 
     /**
-     * @return /Animal object instance of a Catfish
      * @Inheritdoc
+     * @return /Animal object instance of a Catfish
      */
     @Override
     public Animal reproduce() {

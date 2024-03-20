@@ -1,8 +1,5 @@
-.idea
-.idea/*
-out
-out/*
-.gitignore
+.idea/
+out/
 target/
 release.properties
 dependencia-reduced-pom.xml

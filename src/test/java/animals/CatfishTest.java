@@ -1,5 +1,7 @@
 package animals;
 
+import animals.Animal;
+import animals.Catfish;
 import enums.DigestionType;
 import enums.RespirationType;
 import org.junit.jupiter.api.BeforeEach;
