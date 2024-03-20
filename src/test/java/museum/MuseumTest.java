@@ -10,6 +10,7 @@ import static org.mockito.Mockito.when;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
 import java.util.ArrayList;
@@ -18,21 +19,72 @@ import java.util.List;
 class MuseumTest {
 
     private Museum museum = new Museum("Great Museum");
-
-    @Mock
+    
     List<Animal> animalCollection;
+
+    final String ADMISSION_DATE = "02/02/2022";
 
     @BeforeEach
     public void setUp(){
-        Catfish catfish = mock(Catfish.class);
-        Bat bat = mock(Bat.class);
-        Whale whale = mock(Whale.class);
-        Dolphin dolphin = mock(Dolphin.class);
-        Deer deer = mock(Deer.class);
-        Wolf wolf = mock(Wolf.class);
-        Starfish starfish = mock(Starfish.class);
+        Catfish catfish = new Catfish(
+                "Pedro",
+                "Siluriforme",
+                ADMISSION_DATE,
+                "Ictaluridae",
+                DigestionType.OMNIVORE,
+                RespirationType.TRACHEAS
+        );
+        Bat bat = new Bat(
+                "Bati",
+                "Chiroptera",
+                ADMISSION_DATE,
+                "Microchiroptera",
+                DigestionType.OMNIVORE,
+                RespirationType.PULMONARY
+        );
+        Whale whale = new Whale(
+                "Doris",
+                "Cetacea",
+                ADMISSION_DATE,
+                "Cetacean",
+                DigestionType.CARNIVORE,
+                RespirationType.BRANCHIAL
+        );
+        Dolphin dolphin = new Dolphin(
+                "Doli",
+                "Delphinidae",
+                ADMISSION_DATE,
+                "Delphinidae",
+                DigestionType.CARNIVORE,
+                RespirationType.BRANCHIAL
+        );
+        Deer deer = new Deer(
+                "Bambi",
+                "Cervidae",
+                ADMISSION_DATE,
+                "Cervidae",
+                DigestionType.HERVIBORE,
+                RespirationType.PULMONARY,
+                1
+        );
+        String scientificNameWolf = "Canidae";
+        Wolf wolf = new Wolf(
+                "Lobezno",
+                scientificNameWolf,
+                ADMISSION_DATE,
+                scientificNameWolf,
+                DigestionType.HERVIBORE,
+                RespirationType.PULMONARY
+        );
+        Starfish starfish = new Starfish(
+                "Dola",
+                "Delphinidae",
+                "02/02/2022",
+                "Asteriidae",
+                DigestionType.CARNIVORE,
+                RespirationType.BRANCHIAL
+        );
 
-        MockitoAnnotations.openMocks(animalCollection);
         animalCollection = new ArrayList<>();
         animalCollection.add(starfish);
         animalCollection.add(wolf);
@@ -48,6 +100,7 @@ class MuseumTest {
     public void testSearchAnimalPedro() {
         String targetAnimal = "Pedro";
         String expectedResult = "Pedro is in the museum.";
+
 
         assertEquals(expectedResult, museum.searchAnimal(targetAnimal));
     }
