@@ -18,17 +18,17 @@ public class Condor extends Animal implements ISexualReproductionSystem {
     }
 
     /**
-     * @Inheritdoc
      * @return /Animal object in case the mate is a instance of a Condor
      * @return null in case the mate is not a instance of a Condor
+     * @Inheritdoc
      */
     @Override
-    public Animal reproduce(Animal couple) {
-        if (!( couple instanceof Condor )) {
+    public Animal reproduce(Animal mate) {
+        if (!(mate instanceof Condor)) {
             return null;
         }
         String childName = this.getInformation().getName() + " " +
-                couple.getInformation().getName();
+                mate.getInformation().getName();
 
         return new Condor(
                 childName,

@@ -18,17 +18,6 @@ public class AnimalInformation {
         this.family = family;
     }
 
-<<<<<<<< HEAD:src/src/main/java/animals/AnimalInformation.java
-    /**
-     * This provides a way to access to current AnimalInformation
-     * @return the current instance of the AnimalInformation
-     * */
-    public AnimalInformation getAnimalInformation() {
-        return this;
-    }
-========
->>>>>>>> develop:src/main/java/animals/AnimalInformation.java
-
     public String getName() {
         return name;
     }

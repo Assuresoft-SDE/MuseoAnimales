@@ -8,3 +8,5 @@ release.properties
 dependencia-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
+MuseoAnimales.iml
+.gitignore

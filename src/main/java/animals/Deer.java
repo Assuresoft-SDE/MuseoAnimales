@@ -20,21 +20,13 @@ public class Deer extends Animal {
         addAntlers(antlers);
     }
 
-<<<<<<<< HEAD:src/src/main/java/animals/Deer.java
     public String getAntlers() {
         AnimalInformation information =
-                super.getInformation().getAnimalInformation();
+                super.getInformation();
         String name = information.getName();
         String antlerQuantity = (this.antler == MAX_ANTLERS) ? "antlers" : "antler";
 
         return (
-========
-    public void getAntlers() {
-        AnimalInformation information = super.getInformation();
-        String name = information.getName();
-        String antlerQuantity = ( this.antler == MAX_ANTLERS ) ? "antlers" : "antler";
-        System.out.println(
->>>>>>>> develop:src/main/java/animals/Deer.java
                 "The deer " + name + " has " + this.antler + " " + antlerQuantity
         );
     }

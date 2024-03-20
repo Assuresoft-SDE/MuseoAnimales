@@ -18,18 +18,13 @@ public class Wolf extends Animal implements ISexualReproductionSystem {
     }
 
     /**
-     * @Inheritdoc
      * @return /Animal object in case the mate is a instance of a Wolf
      * @return null in case the mate is not a instance of a Wolf
+     * @Inheritdoc
      */
     @Override
-<<<<<<<< HEAD:src/src/main/java/animals/Wolf.java
     public Animal reproduce(Animal mate) {
         if (!(mate instanceof Wolf)) {
-========
-    public Animal reproduce(Animal couple) {
-        if (!( couple instanceof Wolf )) {
->>>>>>>> develop:src/main/java/animals/Wolf.java
             return null;
         }
         String childName =
