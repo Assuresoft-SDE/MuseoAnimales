@@ -17,7 +17,7 @@ class AnimalFinderTest {
 
     @BeforeEach
     public void setUp() {
-        animalFinder = new AnimalFinder();
+
         Catfish catfish = new Catfish(
                 "Pedro",
                 "Siluriforme",
@@ -84,6 +84,7 @@ class AnimalFinderTest {
         this.animalCollection.add(whale);
         this.animalCollection.add(bat);
         this.animalCollection.add(catfish);
+        animalFinder = new AnimalFinder(animalCollection);
     }
 
     @Test
@@ -92,30 +93,27 @@ class AnimalFinderTest {
     }
 
     @Test
-    public void testJumpSearchFirstElementInCollectionJumpOf5() {
+    public void testJumpSearchFirstElementInCollection() {
         int expectedIndex = 0;
-        int jumpSize = 5;
+        //int jumpSize = 5;
         String targetAnimal = "Bambi";
         assertEquals(
                 expectedIndex,
-                animalFinder.jumpSearchAlgorithm(
+                animalFinder.searchAnimal(
                         targetAnimal,
-                        jumpSize,
                         animalCollection
                 )
         );
     }
 
     @Test
-    public void testJumpSearchLastElementInCollectionJumpOf5() {
+    public void testJumpSearchLastElementInCollection() {
         int expectedIndex = 6;
-        int jumpSize = 5;
         String targetAnimal = "Pedro";
         assertEquals(
                 expectedIndex,
-                animalFinder.jumpSearchAlgorithm(
+                animalFinder.searchAnimal(
                         targetAnimal,
-                        jumpSize,
                         animalCollection
                 )
         );
@@ -124,13 +122,11 @@ class AnimalFinderTest {
     @Test
     public void testJumpSearchElementNotInCollection() {
         int expectedIndex = -1;
-        int jumpSize = 5;
         String targetAnimal = "Zack";
         assertEquals(
                 expectedIndex,
-                animalFinder.jumpSearchAlgorithm(
+                animalFinder.searchAnimal(
                         targetAnimal,
-                        jumpSize,
                         animalCollection
                 )
         );

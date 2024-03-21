@@ -8,13 +8,12 @@ import java.util.List;
 public class Museum {
     private AnimalFinder animalFinder;
     private String name;
-    private List<Exhibition> exhibitionList;
     private List<Animal> animalCollection;
 
     public Museum(String name) {
         this.name = name;
         this.animalCollection = new ArrayList<>();
-        this.animalFinder = new AnimalFinder();
+        this.animalFinder = new AnimalFinder(this.animalCollection);
     }
 
 
@@ -26,6 +25,7 @@ public class Museum {
      */
     public void addAnimalCollection(List<Animal> animalCollection) {
         this.animalCollection = animalCollection;
+        this.animalFinder = new AnimalFinder(animalCollection);
     }
 
     /**
@@ -38,8 +38,7 @@ public class Museum {
      * @param animalName Animal's name which you want to search information about
      */
     public String searchAnimal(String animalName) {
-        int jumpSize = 5;
-        int searchedIndex = animalFinder.jumpSearchAlgorithm(animalName, jumpSize, animalCollection);
+        int searchedIndex = animalFinder.searchAnimal(animalName, animalCollection);
         return searchedIndex < 0 ?
                 "Animal not found." :
                 getCurrentAnimalName(searchedIndex) + " is in the museum.";
@@ -53,5 +52,9 @@ public class Museum {
      */
     private String getCurrentAnimalName(int index) {
         return animalCollection.get(index).getInformation().getName();
+    }
+
+    public AnimalFinder getAnimalFinder() {
+        return this.animalFinder;
     }
 }
